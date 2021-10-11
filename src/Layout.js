@@ -11,12 +11,12 @@ const ModalView = () => {
     const [text, setText] = React.useState('');
     const {height, width} = Dimensions.get('window');
     
-    const callback = (call)=>{
-        console.log(call)
-    }
-    const pickImage = async () =>{
-        const res = await launchImageLibrary({mediaType: 'photo'}, callback)
-        console.log(res)
+    
+    const pickImage = () =>{
+      const callback = (call)=>{
+          console.log(call)
+      }
+      launchImageLibrary({mediaType: 'photo'}, callback)
     }
     return (
       <View>
